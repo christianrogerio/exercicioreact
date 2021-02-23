@@ -1,16 +1,27 @@
-import React from 'react'
-import {View, Text, StyleSheet} from 'react-native'
+import React, { useState } from 'react'
+import {View, Text, StyleSheet, Button} from 'react-native'
 import Primeiro from './components/Primeiro'
 import Comp, {Comp1, Comp2} from './components/Multi'
 import MinMax from './components/MinMax'
 import Aleatorio from './components/Aleatorio'
 import Botao from './components/Botao'
+import Contador from './components/Contador'
+import Indireta from './components/Indireta'
 
 export default function(){
-  return (
+const [msg, setMsg] = useState('vazio');
+
+function callFazer(valor){
+  setMsg(valor)
+}
+
+  return (        
         <View style={style.App}>
-          <Botao />          
+          <Text>{msg}</Text>
+          <Indireta funcao={callFazer} />
+          <Contador inicial={10} />  
           { /*
+          <Botao />
           <Aleatorio min={0} max={999}/>
           <MinMax min={0} max={999}/>
           <Text style={style.Titulo}>Teste</Text>
