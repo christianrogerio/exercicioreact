@@ -10,6 +10,7 @@ import Indireta from './components/Indireta'
 import ParImpar from './components/ParImpar'
 import Grupo from './components/familia/grupo'
 import Membro from './components/familia/membro'
+import UsuarioLogado from './components/UsuarioLogado'
 
 
 export default function(){
@@ -21,14 +22,17 @@ function callFazer(valor){
 
   return (        
         <SafeAreaView style={style.App}>
+          <UsuarioLogado nome="Christian" />          
+          <UsuarioLogado nome="" />          
+          <UsuarioLogado />          
+          <UsuarioLogado nome="Rogério" />          
+          { /*
             <Grupo>
             <Membro nome="Christian"/>
             <Membro nome="Mauren"/>
             <Membro nome="Rogério"/>
-            </Grupo>
-            
+            </Grupo>          
           
-          { /*
           <ParImpar></ParImpar>
           <Text>{msg}</Text>
           <Text>Mudou</Text>
