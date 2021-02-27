@@ -11,7 +11,7 @@ import ParImpar from './components/ParImpar'
 import Grupo from './components/familia/grupo'
 import Membro from './components/familia/membro'
 import UsuarioLogado from './components/UsuarioLogado'
-
+import ListaProdutos from './components/ListaProdutos'
 
 export default function(){
 const [msg, setMsg] = useState('vazio');
@@ -22,11 +22,13 @@ function callFazer(valor){
 
   return (        
         <SafeAreaView style={style.App}>
+          <ListaProdutos/>
+          { /*
           <UsuarioLogado nome="Christian" />          
           <UsuarioLogado nome="" />          
           <UsuarioLogado />          
           <UsuarioLogado nome="Rogério" />          
-          { /*
+          
             <Grupo>
             <Membro nome="Christian"/>
             <Membro nome="Mauren"/>
