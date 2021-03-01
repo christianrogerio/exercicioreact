@@ -13,6 +13,9 @@ import Membro from './components/familia/membro'
 import UsuarioLogado from './components/UsuarioLogado'
 import ListaProdutos from './components/ListaProdutos'
 import ListaProdutosV2 from './components/ListaProdutosV2'
+import DigiteSeuNome from './components/DigiteSeuNome'
+import FlexBoxV1 from './components/layout/FlexBoxV1'
+import Mega from './components/mega/Mega'
 
 export default function(){
 const [msg, setMsg] = useState('vazio');
@@ -23,8 +26,11 @@ function callFazer(valor){
 
   return (        
         <SafeAreaView style={style.App}>
-          <ListaProdutosV2/>
-           { /*
+          <Mega qtdNumeros={7} />
+          { /* <FlexBoxV1 />
+           <DigiteSeuNome />
+           
+          <ListaProdutosV2/>          
           <ListaProdutos/>         
           <UsuarioLogado nome="Christian" />          
           <UsuarioLogado nome="" />          
