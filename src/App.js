@@ -26,7 +26,7 @@ function callFazer(valor){
 
   return (        
         <SafeAreaView style={style.App}>
-          <Mega qtdNumeros={7} />
+          <Mega qtdNumeros={10} />
           { /* <FlexBoxV1 />
            <DigiteSeuNome />
            
