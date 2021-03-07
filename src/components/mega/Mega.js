@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-import {Text, TextInput, Button} from 'react-native'
+import {Text, TextInput, Button, View} from 'react-native'
+import MegaNumeros from './MegaNumero'
 
 export default class Mega extends Component{
     state ={
@@ -22,7 +23,7 @@ export default class Mega extends Component{
 
     gerarNumeros = ()=>{
         let lista = [];
-        for(i=0;i<=this.state.qtdNumeros;i++){
+        for(let i=0;i<=this.state.qtdNumeros;i++){
             lista[i]=this.sortearNumero(lista);
         }
         lista.sort(function(a,b){return a-b;});
@@ -33,11 +34,15 @@ export default class Mega extends Component{
         this.gerarNumeros();       
     }
 
+    exibirNumeros(){
+        const nums = this.state.numeros;
+        return nums.map(num => { return <MegaNumeros num={num}/> } );
+    }
 
     render(){
         return (
             <>            
-            <Text>MEGA SENA {this.state.qtdNumeros}</Text>
+            <Text>!MEGA-SENA {this.state.qtdNumeros}</Text>
             <TextInput 
                 keyboardType={'numeric'}
                 style={{borderBottomWidth:1}}
@@ -46,7 +51,9 @@ export default class Mega extends Component{
                 onChangeText={this.alterarQtdNumeros}                               
             />
             <Button title='Sortear!' onPress={this.clickSortear} />
-            <Text>{this.state.numeros.join(' - ')}</Text>
+            <View style={{flexDirection:'row', flexWrap:'wrap'  }}>
+            {this.exibirNumeros()}
+            </View> 
             </>
         )
     }
